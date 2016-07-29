@@ -1,0 +1,8 @@
+{{#if data}}
+  <p>{{data.result}}</p>
+  {{my-timer maxTick=7 timerEnd=(action "timerExpired" "many timers") fetch=(action "fetchData")}}
+
+  {{my-timer maxIterations=1 maxTick=12 timerEnd=(action "timerExpired" "single")}}
+{{/if}}
+
+<button {{action "fetchData"}}>Fetch Data</button>
